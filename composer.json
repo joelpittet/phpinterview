@@ -1,0 +1,16 @@
+{
+    "name": "joelpittet/phpinterview",
+    "require": {
+        "phpunit/phpunit": ">=4.8.35 <5"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joël Pittet",
+            "email": "pittet@cs.ubc.ca"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "": "src/" }
+    }
+}
