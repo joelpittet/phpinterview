@@ -69,7 +69,7 @@ class MovieTest extends \PHPUnit_Framework_TestCase {
 
   public function testNoTicketsCostsZero() {
     $result = $this->calc(0, DaysOfWeek::MON, FALSE, FALSE, []);
-    $this->assertSame(0, $result, "No tckets costs zero");
+    $this->assertSame(0, $result, "No tickets costs zero");
   }
 
   public function testOverlength2DParquetWednesdayMidAgeStudents() {
