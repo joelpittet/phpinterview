@@ -1,4 +1,5 @@
 <?php
+
 namespace Kata\Tests;
 
 use Kata\DaysOfWeek;
@@ -10,7 +11,6 @@ class MovieTest extends \PHPUnit_Framework_TestCase {
    * Data provider for movies.
    *
    * @return array
-   * 
    */
   public function movieProvider() {
     return [
@@ -69,7 +69,7 @@ class MovieTest extends \PHPUnit_Framework_TestCase {
 
   public function testNoTicketsCostsZero() {
     $result = $this->calc(0, DaysOfWeek::MON, FALSE, FALSE, []);
-    $this->assertEquals(0, $result, "No tckets costs zero");
+    $this->assertSame(0, $result, "No tckets costs zero");
   }
 
   public function testOverlength2DParquetWednesdayMidAgeStudents() {
@@ -182,5 +182,5 @@ class MovieTest extends \PHPUnit_Framework_TestCase {
     $this->applyTickets($cashReg, 90, DaysOfWeek::MON, TRUE, TRUE, $tickets);
     $this->assertEquals(70.0, $cashReg->finishPurchase(), "multiple transactions, same register");
   }
-  
+
 }
