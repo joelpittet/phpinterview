@@ -59,8 +59,8 @@ To solve this exercise, implement the interface provided within
 
 1. To start it should look like this
 
-    ![Errors](img/fail.png)
+    ![PHPUnit Fail](img/fail.png)
     
 1. And to finish it will look like this:
 
-    ![Errors](img/pass.png)
+    ![PHPUnit Pass](img/pass.png)
