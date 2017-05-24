@@ -56,3 +56,11 @@ To solve this exercise, implement the interface provided within
 1. Run './vendor/bin/phpunit' to run your tests.
 
        ./vendor/bin/phpunit
+
+1. To start it should look like this
+
+    ![Errors](img/fail.png)
+    
+1. And to finish it will look like this:
+
+    ![Errors](img/pass.png)
