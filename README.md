@@ -9,7 +9,7 @@ As of October 2011, Dave Thomas has published 21 different katas.
 You can find others to start practicing [here](http://codingdojo.org/KataCatalogue/).
 
 When you do programming katas, you use TDD. That's why I have included
-PHPUnit as composer dependencies.
+PHPUnit as a dependency.
 
 
 ## Exercise: Movie Tickets
@@ -47,16 +47,12 @@ To solve this exercise, implement the interface provided within
 
 ### Execute tests
 
-1. You will need composer.
-
-       curl -sS https://getcomposer.org/installer | php
-
-1. Then add your code to 'src/Kata/Movie.php' until tests pass, using pricing
+1. Add your code to 'src/Kata/Movie.php' until tests pass, using pricing
    rules from above exercise notes.
 
-1. Run './vendor/bin/phpunit' to run your tests.
+1. Run 'php ./vendor/bin/phpunit' from your command line to run your tests.
 
-       ./vendor/bin/phpunit
+       php vendor/bin/phpunit
 
 1. To start it should look like this
 
