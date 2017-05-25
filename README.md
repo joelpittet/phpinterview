@@ -19,8 +19,8 @@ Adaptation of codingkata.org's Movie Ticket problem
 
 ### Description
 
-The computers - if you can call those DOS slaves so - all went down. Worst case 
-scenario. As you are the only clerk who can multiply you are now in charge of 
+The computers - if you can call those DOS slaves so - all went down. Worst case
+scenario. As you are the only clerk who can multiply you are now in charge of
 handling all ticket sales! Seize the opportunity!
 
 **Basic admission rates (regular weekday, 2D movie, <=120 min, parquet)**
@@ -38,10 +38,10 @@ handling all ticket sales! Seize the opportunity!
     Movie Day (Thurdsday, except for groups!)       -$2.00
     Weekends                                        +$1.50
     Loge                                            +$2.00
-    
+
 Customer satisfaction is important, so always charge the lowest price  possible!
 
-To solve this exercise, implement the interface provided within 
+To solve this exercise, implement the interface provided within
 `src/Kata/Movie.php` after you checked out the project code.
 
 
@@ -51,8 +51,9 @@ To solve this exercise, implement the interface provided within
 
        curl -sS https://getcomposer.org/installer | php
 
-1. Then add your code to 'src/Kata/Movie.php' until tests pass, using pricing rules 
-  from above PDF.
+1. Then add your code to 'src/Kata/Movie.php' until tests pass, using pricing
+   rules from above exercise notes.
+
 1. Run './vendor/bin/phpunit' to run your tests.
 
        ./vendor/bin/phpunit
@@ -60,7 +61,7 @@ To solve this exercise, implement the interface provided within
 1. To start it should look like this
 
     ![PHPUnit Fail](img/fail.png)
-    
+
 1. And to finish it will look like this:
 
     ![PHPUnit Pass](img/pass.png)
