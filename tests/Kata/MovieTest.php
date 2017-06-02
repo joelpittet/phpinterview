@@ -69,29 +69,31 @@ class MovieTest extends \PHPUnit_Framework_TestCase {
 
   public function testNoTicketsCostsZero() {
     $result = $this->calc(0, DaysOfWeek::MON, FALSE, FALSE, []);
-    $this->assertSame(0, $result, "No tickets costs zero");
+    $this->assertNotNull($result, "No tickets costs are not NULL");
+    $this->assertNotInternalType('string', $result, "No tickets costs are not a string");
+    $this->assertEquals(0, $result, "No tickets costs zero");
   }
 
   public function testOverlength2DParquetWednesdayMidAgeStudents() {
-    $tickets = [ [35, FALSE], [35, FALSE], [64, TRUE], [35, TRUE] ];
+    $tickets = [[35, FALSE], [35, FALSE], [64, TRUE], [35, TRUE]];
     $result = $this->calc(121, DaysOfWeek::WED, TRUE, FALSE, $tickets);
     $this->assertEquals(44.0, $result, "overlength, 2D, parquet, wednesday, mid-age, students");
   }
 
   public function testOverlength2DParquetMondaySeniorNoStudents() {
-    $tickets = [ [35, FALSE], [35, FALSE], [64, FALSE], [65, FALSE] ];
+    $tickets = [[35, FALSE], [35, FALSE], [64, FALSE], [65, FALSE]];
     $result = $this->calc(123, DaysOfWeek::MON, TRUE, FALSE, $tickets);
     $this->assertEquals(45.0, $result, "overlength, 2D, parquet, monday, senior, no students");
   }
 
   public function testOverlength2DParquetTuesdaySeniorStudents() {
-    $tickets = [ [35, FALSE], [35, FALSE], [64, FALSE], [68, TRUE] ];
+    $tickets = [[35, FALSE], [35, FALSE], [64, FALSE], [68, TRUE]];
     $result = $this->calc(145, DaysOfWeek::TUE, TRUE, FALSE, $tickets);
     $this->assertEquals(45.0, $result, "overlength, 2D, parquet, tuesday, senior students");
   }
 
   public function testOverlength2DParquetTuesday1ChildNoStudents() {
-    $tickets = [ [35, FALSE], [35, FALSE], [64, FALSE], [10, FALSE] ];
+    $tickets = [[35, FALSE], [35, FALSE], [64, FALSE], [10, FALSE]];
     $result = $this->calc(145, DaysOfWeek::TUE, TRUE, FALSE, $tickets);
     $this->assertEquals(44.5, $result, "overlength, 2D, parquet, tuesday, 1 child, no students");
   }
@@ -174,7 +176,9 @@ class MovieTest extends \PHPUnit_Framework_TestCase {
 
   public function testMultipleTransactionSameRegister() {
     $cashReg = new Movie();
-    $tickets = [ [35, FALSE], [35, FALSE], [35, FALSE], [35, FALSE], [35, FALSE] ];
+    $tickets = [
+      [35, FALSE], [35, FALSE], [35, FALSE], [35, FALSE], [35, FALSE],
+    ];
 
     $this->applyTickets($cashReg, 90, DaysOfWeek::MON, TRUE, TRUE, $tickets);
     $this->assertEquals(70.0, $cashReg->finishPurchase(), "multiple transactions, same register");
